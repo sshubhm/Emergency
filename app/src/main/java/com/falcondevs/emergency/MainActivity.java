@@ -37,6 +37,13 @@ public class MainActivity extends AppCompatActivity {
             public void onLocationChanged(Location location) {
                 latitude = location.getLatitude();
                 longitude = location.getLongitude();
+                location.setLatitude(latitude);
+                location.setLongitude(longitude);
+                Location location1 = new Location("");
+                location1.setLongitude(77.0);
+               location1.setLatitude(28.0);
+                TextView tv = (TextView) findViewById(R.id.tv);
+                tv.setText(location.distanceTo(location1)/1000.0 + "");
             }
 
             @Override
@@ -66,8 +73,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         locationManager.requestLocationUpdates("gps", 5000, 0, locationListener);
-        TextView tv = (TextView) findViewById(R.id.tv);
-        tv.setText(longitude + " , " + latitude);
+
 
     }
 }
