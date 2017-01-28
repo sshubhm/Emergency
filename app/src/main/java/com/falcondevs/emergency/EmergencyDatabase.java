@@ -5,4 +5,9 @@ package com.falcondevs.emergency;
  */
 
 public class EmergencyDatabase {
+  
+  private hospital_id;
+  private hospital_name;
+  private hospital_address;
+  
 }
